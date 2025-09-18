@@ -47,6 +47,10 @@
         background-position: center; /* center the image */
         background-attachment: fixed;
       }
+      .active {
+        background-color: black;
+        color: white;
+      }
     </style>
   </head>
   <body class="bg-art">
@@ -78,65 +82,21 @@
         </h1>
         <div class="divider"></div>
         <!-- categories  -->
-        <div class="grid grid-cols-1 gap-3" id="category-container">
-          <button class="btn btn-block shadow btn-category">
-            <img
-              src="https://www.themealdb.com/images/category/beef.png"
-              alt=""
-              class="w-10"
-            />SeaFood
-          </button>
-          <button class="btn btn-block shadow btn-category">
-            <img
-              src="https://www.themealdb.com/images/category/beef.png"
-              alt=""
-              class="w-10"
-            />SeaFood
-          </button>
-          <button class="btn btn-block shadow btn-category">
-            <img
-              src="https://www.themealdb.com/images/category/beef.png"
-              alt=""
-              class="w-10"
-            />SeaFood
-          </button>
-        </div>
+        <div
+          class="grid grid-cols-1 gap-3 sticky top-0"
+          id="category-container"
+        ></div>
       </section>
 
       <section class="col-span-7 p-3">
         <h1 class="text-xl font-bold text-center rounded-2xl">Our Foods</h1>
         <div class="divider"></div>
 
-        <div class="" id="food-container">
-          <!-- sample card  -->
-          <div class="p-5 bg-white flex gap-3 shadow rounded-xl">
-            <div class="img flex-1">
-              <img
-                src="https://www.themealdb.com/images/media/meals/1520081754.jpg"
-                alt=""
-                class="w-[160px] rounded-xl h-[160px] object-cover"
-              />
-            </div>
-            <div class="flex-2">
-              <h1 class="text-xl font-bold">
-                Roast fennel and aubergine paella
-              </h1>
-
-              <div class="badge badge-warning">Vegan</div>
-
-              <div class="divider divider-end">
-                <h2 class="text-yellow-600 font-semibold">
-                  $ <span class="price">560</span> BDT
-                </h2>
-              </div>
-
-              <button class="btn btn-warning">
-                <i class="fa-solid fa-square-plus"></i>
-                Add This Item
-              </button>
-            </div>
-          </div>
+        <div id="loding-spinner" class="min-h-[60vh] flex flex-col justify-center items-center bg-white hidden">
+          <span class="loading loading-bars loading-xl"></span>
         </div>
+
+        <div class="grid grid-cols-1 gap-5" id="food-container"></div>
       </section>
       <section
         class="col-span-3 p-3 bg-white border-[#FEBF00] border-2 rounded-xl"
@@ -166,7 +126,7 @@
               </div>
             </div>
             <div
-              class="w-6 h-6 flex justify-center items-center bg-red-600 rounded-full absolute -top-1 -right-1 text-white"
+              class="w-6 h-6 flex justify-center items-center bg-red-600 rounded-full absolute -top-1 -right-1 text-white cursor-pointer"
             >
               <i class="fa-solid fa-xmark"></i>
             </div>
@@ -178,5 +138,27 @@
         </div>
       </section>
     </main>
+    <!-- You can open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
+    <dialog id="my_modal_3" class="modal">
+      <div class="modal-box">
+        <form method="dialog">
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            ✕
+          </button>
+        </form>
+        <div class="" id="details-container">
+          <div>
+            <img
+              src="https://www.themealdb.com/images/media/meals/lwsnkl1604181187.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </dialog>
+    <script src="./script.js/index.js"></script>
   </body>
 </html>
